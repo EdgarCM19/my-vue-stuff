@@ -1,0 +1,14 @@
+$bg-color: #ecf0f3;
+$fg-color: #292d32;
+$shadow-color: rgba(0, 0, 0, 0.5);
+$light-color: rgba(255, 255, 255, 0.2);
+
+:root {
+    --bg-color: $bg-color;
+    --fg-color: $fg-color;
+}
+
+.dark {
+    --bg-color: #292d32;
+    --fg-color: #ecf0f3;
+}

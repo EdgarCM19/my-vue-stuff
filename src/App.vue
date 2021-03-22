@@ -1,12 +1,33 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="main" :class="{ dark : store.getters.getTheme() }">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
   </div>
-  <router-view/>
 </template>
 
+<script lang="ts">
+import { defineComponent, provide } from 'vue'
+import store from '@/store';
+
+export default defineComponent({
+  setup() {
+    provide('store', store);
+    const theme = false;
+    return { 
+      theme,
+      store
+    };
+  },
+})
+</script>
+
+
 <style lang="scss">
+@import './styles/_app.scss';
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
