@@ -26,7 +26,7 @@ import { computed, defineComponent, inject, ref } from 'vue';
 export default defineComponent({
   props: {
     iterable: {
-      type: Array,
+      type: Array as () => string[],
       required: true,
     },
     placeholder: {

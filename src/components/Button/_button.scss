@@ -1,6 +1,24 @@
-@import '../../styles/_variables.scss';
+@import '../../styles/base';
 
 .btn {
-    background: var(--bg-color);
-    color: var(--fg-color);
+    @include flex-row-center
+    margin: 0 4px;
+    border: none;
+    border-radius: 50px;
+    background-color: blue;
+    cursor: pointer;
+    padding: 4px;
+
+    & .btn-icon {
+        display: inline-flex;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+        margin-top: 8px;
+    }
+
+    &:hover {
+        width: auto;
+    }
+
 }

@@ -34,13 +34,29 @@
 }
 
 @mixin outer-shadow($coord, $blur) {
-	box-shadow: $coord $coord $blur $shadow-color,
-		(-$coord) (-$coord) $blur $light-color;
+	box-shadow: $coord $coord $blur rgba(var(--shadow-color), var(--shadow-strength)),
+		    (-$coord) (-$coord) $blur rgba(var(--light-color), var(--light-strength));
 }
 
 @mixin inner-shadow($coord, $blur) {
-	box-shadow: inset $coord $coord $blur $shadow-color,
-		inset (-$coord) (-$coord) $blur $light-color;
+	box-shadow: inset $coord $coord $blur rgba(var(--shadow-color), var(--shadow-strength)),
+		    inset (-$coord) (-$coord) $blur rgba(var(--light-color), var(--light-strength));
+}
+
+@mixin rigth-outer($coord, $blur) {
+    box-shadow: $coord 0 $blur rgba(var(--shadow-color), var(--shadow-strength)); 
+}
+
+@mixin left-outer($coord, $blur) {
+    box-shadow: (-$coord) 0 $blur rgba(var(--shadow-color), var(--shadow-strength)); 
+}
+
+@mixin rigth-inner($coord, $blur) {
+    box-shadow: inset $coord 0 $blur rgba(var(--light-color), var(--light-strength)); 
+}
+
+@mixin left-inner($coord, $blur) {
+    box-shadow: inset (-$coord) 0 $blur rgba(var(--light-color), var(--light-strength)); 
 }
 
 @mixin scroll-bar {

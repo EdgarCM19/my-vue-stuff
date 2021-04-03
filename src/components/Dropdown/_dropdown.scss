@@ -1,25 +1,5 @@
 @import '../../styles/base';
-/*
-.wrapper {
-  border: solid 1px #fff;
-  border-radius: 8px;
-  padding: 8px 8px;
-  margin: 8px 8px;
-}
-
-.wrapper .title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.wrapper > svg {
-  width: 16px;
-  margin: 8px;
-}
-.selected-option {
-  display: inline;
-} */
+@import '../../styles/animations';
 
 .wrapper {
   position: relative;
@@ -31,6 +11,7 @@
   @include outer-shadow(3px, 6px);
   min-width: 200px;
   cursor: pointer;
+  animation: test .8s ease-in;
 
   & .title {
     @include flex-row-between;
@@ -62,7 +43,7 @@
   min-width: 200px;
   max-height:200px;
   overflow-y: auto;
-  z-index: 999;
+  z-index: 100;
   @include color;
   @include inner-shadow(2px, 3px);
   @include scroll-bar;
